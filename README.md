@@ -1,5 +1,4 @@
-# AESxWin
-Encrypt\Decrypt file(s) with AES
+Encrypt\Decrypt file(s) with [AES] (https://en.wikipedia.org/wiki/Advanced_Encryption_Standard) 256-bit
 ===============================
 
 ### Description
