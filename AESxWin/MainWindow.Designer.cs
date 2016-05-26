@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.gbPaths = new System.Windows.Forms.GroupBox();
             this.btnRemovePath = new System.Windows.Forms.Button();
             this.btnAddFolder = new System.Windows.Forms.Button();
@@ -121,7 +122,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(205, 43);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 13);
+            this.label1.Size = new System.Drawing.Size(64, 13);
             this.label1.TabIndex = 3;
             this.label1.Text = "Extensions :";
             // 
@@ -156,7 +157,7 @@
             this.chkDeleteOrg.AutoSize = true;
             this.chkDeleteOrg.Location = new System.Drawing.Point(7, 19);
             this.chkDeleteOrg.Name = "chkDeleteOrg";
-            this.chkDeleteOrg.Size = new System.Drawing.Size(118, 17);
+            this.chkDeleteOrg.Size = new System.Drawing.Size(117, 17);
             this.chkDeleteOrg.TabIndex = 0;
             this.chkDeleteOrg.Text = "Delete Orignal Files";
             this.chkDeleteOrg.UseVisualStyleBackColor = true;
@@ -212,8 +213,9 @@
             this.lblInfo.Name = "lblInfo";
             this.lblInfo.Size = new System.Drawing.Size(428, 20);
             this.lblInfo.TabIndex = 5;
-            this.lblInfo.Text = "by : Eslam Hamouda (@EslaMx7) - www.eslamx.com © 2015";
+            this.lblInfo.Text = "by : Eslam Hamouda (@EslaMx7) - www.eslamx.com";
             this.lblInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblInfo.Click += new System.EventHandler(this.lblInfo_Click);
             // 
             // gbLog
             // 
@@ -250,6 +252,7 @@
             this.Controls.Add(this.gbPassword);
             this.Controls.Add(this.gbOptions);
             this.Controls.Add(this.gbPaths);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "MainWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

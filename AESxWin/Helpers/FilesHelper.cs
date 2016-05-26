@@ -118,7 +118,7 @@ namespace AESxWin.Helpers
 
             foreach (var ext in extensions)
             {
-                if (path.EndsWith(ext))
+                if (path.ToLower().EndsWith(ext.ToLower()))
                 {
                     return true;
                 }

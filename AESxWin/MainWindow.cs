@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -168,7 +169,7 @@ namespace AESxWin
 
 
 
-            this.Log(String.Format("Finished : {0} File(s) Encrypted.", count));
+            this.Log($"Finished : {count} File(s) Encrypted.");
 
 
         }
@@ -180,7 +181,7 @@ namespace AESxWin
 
             this.Log("Decryption Started.");
 
-            if (paths != null && paths.Count > 0)
+            if (paths.Count > 0)
             {
                 foreach (string path in paths)
                 {
@@ -198,8 +199,9 @@ namespace AESxWin
                         }
                         catch (Exception ex)
                         {
-
                             this.Log(path + " " + ex.Message);
+                            if (File.Exists(path.RemoveExtension()))
+                                File.Delete(path.RemoveExtension());
                         }
 
 
@@ -227,8 +229,9 @@ namespace AESxWin
                                     }
                                     catch (Exception ex)
                                     {
-
                                         this.Log(file + " " + ex.Message);
+                                        if(File.Exists(file.RemoveExtension()))
+                                            File.Delete(file.RemoveExtension());
                                     }
                                 }
 
@@ -246,16 +249,12 @@ namespace AESxWin
                 }
             }
 
-            this.Log(String.Format("Finished : {0} File(s) Decrypted.", count));
+            this.Log($"Finished : {count} File(s) Decrypted.");
         }
 
-
-
-
-
-
-
-
-
+        private void lblInfo_Click(object sender, EventArgs e)
+        {
+            Process.Start("http://eslamx.com");
+        }
     }
 }
