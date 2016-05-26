@@ -21,6 +21,20 @@ namespace AESxWin
             InitializeComponent();
             this.SetLogViewer(txtLog);
         }
+
+        public MainWindow(string[] args)
+        {
+            InitializeComponent();
+            this.SetLogViewer(txtLog);
+
+            foreach (var path in args)
+            {
+                if (File.Exists(path) || Directory.Exists(path))
+                    lstPaths.Items.Add(path);
+            }
+
+        }
+
         private void MainWindow_Load(object sender, EventArgs e)
         {
             lstExts.SelectedIndex = 6;
@@ -255,6 +269,26 @@ namespace AESxWin
         private void lblInfo_Click(object sender, EventArgs e)
         {
             Process.Start("http://eslamx.com");
+        }
+
+        private void lstPaths_DragDrop(object sender, DragEventArgs e)
+        {
+            var fileList = e.Data.GetData(DataFormats.FileDrop, false);
+
+            var paths = fileList as IEnumerable<string>;
+            if (paths != null)
+                foreach (var path in paths)
+                {
+                    lstPaths.Items.Add(path);
+                }
+        }
+
+        private void lstPaths_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+                e.Effect = DragDropEffects.Copy;
+            else
+                e.Effect = DragDropEffects.None;
         }
     }
 }

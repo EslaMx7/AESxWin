@@ -97,12 +97,15 @@
             // 
             // lstPaths
             // 
+            this.lstPaths.AllowDrop = true;
             this.lstPaths.FormattingEnabled = true;
             this.lstPaths.HorizontalScrollbar = true;
             this.lstPaths.Location = new System.Drawing.Point(6, 19);
             this.lstPaths.Name = "lstPaths";
             this.lstPaths.Size = new System.Drawing.Size(392, 69);
             this.lstPaths.TabIndex = 0;
+            this.lstPaths.DragDrop += new System.Windows.Forms.DragEventHandler(this.lstPaths_DragDrop);
+            this.lstPaths.DragEnter += new System.Windows.Forms.DragEventHandler(this.lstPaths_DragEnter);
             // 
             // gbOptions
             // 
@@ -242,6 +245,7 @@
             // 
             // MainWindow
             // 
+            this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(428, 472);
