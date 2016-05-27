@@ -10,8 +10,7 @@ I'm using the [C# implementation] (https://github.com/kenkendk/sharpaescrypt) of
 
 ![AESxWin Main Window] (http://i.imgur.com/2bgbbZy.png)
 
-## [Download Now] (https://github.com/EslaMx7/AESxWin/releases)
+## [Download Now] (https://github.com/EslaMx7/AESxWin/releases)  (For Testing Only, Not Production Ready !)
 ([.NET Framework 4.5] (https://www.microsoft.com/en-us/download/details.aspx?id=30653) required)
-
 
 
